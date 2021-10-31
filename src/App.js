@@ -7,12 +7,16 @@ import Sidebar from "./components/sidebar";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./components/theme";
 import {BrowserRouter as Router} from "react-router-dom"
+import {AuthProvider} from "./hooks/useAuth"
+
 
 function App() {
 
-  
+  const user = JSON.parse(localStorage.getItem("bwf-user"))
+
   return (
     <ThemeProvider theme={theme}>
+      <AuthProvider user={user}>
     <div className="App">
     <Router>
       <Header/>
@@ -22,6 +26,7 @@ function App() {
       </div>
     </Router>
     </div>
+    </AuthProvider>
     </ThemeProvider>
   );
 }
