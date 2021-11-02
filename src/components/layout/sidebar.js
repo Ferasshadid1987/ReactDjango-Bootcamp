@@ -5,8 +5,9 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import {auth} from "../services/user-services"
-import {useAuth} from "../hooks/useAuth" 
+import {auth} from "../../services/user-services"
+import {useAuth} from "../../hooks/useAuth" 
+import {Link} from "react-router-dom"
 
 function Sidebar() {
 
@@ -42,6 +43,8 @@ function Sidebar() {
       <Button variant="contained" color="secondary" type="submit" >
         LOGIN
     </Button>
+    <br/>
+    <Link to="/register">Register here if you do not have an account</Link>
     </form>
      : <div>
        <p>{authData.user.username}</p>

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react"
 import './App.css';
 
-import Header from "./components/header"
-import Main from "./components/main";
-import Sidebar from "./components/sidebar";
+import Header from "./components/layout/header"
+import Main from "./components/layout/main";
+import Sidebar from "./components/layout/sidebar";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./components/theme";
 import {BrowserRouter as Router} from "react-router-dom"

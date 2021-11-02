@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react"
-import GroupList from "./group-list";
+import GroupList from "../group/group-list";
 import {Route, Switch} from 'react-router-dom'
-import GroupDetails from "./group-details";
-import {useAuth} from '../hooks/useAuth'
+import GroupDetails from "../group/group-details";
+import {useAuth} from '../../hooks/useAuth'
+import Register from "../user/register";
+import Account from "../user/account"
 
 
 function Main() {
@@ -18,6 +20,12 @@ function Main() {
       </Route>
       <Route exact path="/details/:id">
         <GroupDetails />
+      </Route>
+      <Route exact path="/register">
+        <Register />
+      </Route>
+      <Route exact path="/account">
+        <Account />
       </Route>
       </Switch>
     </div>
