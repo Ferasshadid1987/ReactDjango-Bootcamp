@@ -1,4 +1,4 @@
-import React,  {useState, useEffect} from "react"
+import  {useState, useEffect} from "react"
 import {getGroup} from '../services/services'
 
 
@@ -14,6 +14,7 @@ export function useFetchGroup(groupId){
         const data = await getGroup(groupId)
         setGroup(data)
         setLoading(false)
+        setError(null)
         }
    getData()
  }, [groupId])

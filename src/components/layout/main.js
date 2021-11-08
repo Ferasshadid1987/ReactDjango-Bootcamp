@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import GroupList from "../group/group-list";
 import {Route, Switch} from 'react-router-dom'
 import GroupDetails from "../group/group-details";

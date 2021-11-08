@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 
 import {useAuth} from '../../hooks/useAuth'
 import {Link, useHistory} from "react-router-dom"
@@ -15,7 +15,7 @@ import {auth} from "../../services/user-services"
 function Register() {
 
     const history = useHistory()
-    const {authData, setAuth} = useAuth()
+    const { setAuth} = useAuth()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')

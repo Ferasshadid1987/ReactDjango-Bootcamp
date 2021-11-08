@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 
 import Button from "@mui/material/Button"
 import Box from '@mui/material/Box'
@@ -8,12 +8,14 @@ import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import {auth} from "../../services/user-services"
 import {useAuth} from "../../hooks/useAuth" 
 import {Link} from "react-router-dom"
+import User from "../user/user"
 
 function Sidebar() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const {authData, setAuth} = useAuth()
+  
 
   const handleSubmit = async e => { 
     e.preventDefault()
@@ -47,7 +49,9 @@ function Sidebar() {
     <Link to="/register">Register here if you do not have an account</Link>
     </form>
      : <div>
-       <p>{authData.user.username}</p>
+       <User user={authData.user}/>
+       <br/>
+       <br/>
        <Button variant="contained" color="secondary" onClick={()=> logout()} >
         LOGOUT
     </Button>

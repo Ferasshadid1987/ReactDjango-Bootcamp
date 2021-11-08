@@ -23,3 +23,13 @@ export function register(userData){
       console.log(e)
     })
 }
+
+export function uploadAvatar(profileID, data){
+    return fetch(`http://127.0.0.1:8000/api/profile/${profileID}/`, {
+        method:"PUT",
+        body: data
+    }).then(resp => resp.json())
+    .catch( e => {
+      console.log(e)
+    })
+}
