@@ -7,7 +7,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle'
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import {auth} from "../../services/user-services"
 import {useAuth} from "../../hooks/useAuth" 
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import User from "../user/user"
 
 function Sidebar() {
@@ -15,6 +15,7 @@ function Sidebar() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const {authData, setAuth} = useAuth()
+  const history = useHistory()
   
 
   const handleSubmit = async e => { 
@@ -27,6 +28,10 @@ function Sidebar() {
     setAuth(null)
   }
 
+  const account = () => {
+    history.push("/account")
+  }
+  
   return (
     <div className="sidebar">
       {!authData ?
@@ -54,6 +59,9 @@ function Sidebar() {
        <br/>
        <Button variant="contained" color="secondary" onClick={()=> logout()} >
         LOGOUT
+    </Button>
+    <Button variant="contained" color="secondary" onClick={()=> account()} >
+        ACCOUNT
     </Button>
      </div>
      }
