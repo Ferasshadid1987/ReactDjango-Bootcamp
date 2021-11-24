@@ -21,11 +21,12 @@ export function register(userData){
     })
 }
 
-export function changePassword(userData, userId){
+export function changePassword(userData, userId, token){
     return fetch(`http://127.0.0.1:8000/api/users/${userId}/change_pass/`, {
         method:"PUT",
         headers:{
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization" : `Token ${token}`
         }, 
         body: JSON.stringify(userData)}
     ).then(status).catch( e => {console.log(e)
