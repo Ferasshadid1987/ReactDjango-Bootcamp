@@ -5,6 +5,9 @@ import {getGroups} from "../../services/services"
 
 function GroupList() {
 
+ // const group = 'baseball bat, cap, yo-yo, fireworks'
+ // const groups = groups.split(',')
+
   const [groups, setGroups] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -27,9 +30,12 @@ function GroupList() {
 if (error) return <h1>Error</h1>
 if (loading) return <h1>Loading</h1>
 
+
+
+
   return (
     <div >
-      {groups && groups.map (group => { 
+      { groups && groups.map (group => { 
         return (
         <Link key={group.id} to={`/details/${group.id}`}>
             <p >{group.name}  {group.location}</p>
