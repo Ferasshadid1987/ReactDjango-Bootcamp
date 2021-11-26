@@ -11,3 +11,29 @@ export function getGroups() {
     .then(status).catch( e => {console.log(e)
     })
 }
+
+export function joinGroups(data) {
+    return fetch(`http://127.0.0.1:8000/api/members/join/`, {
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json"
+        }, 
+        body: JSON.stringify(data)
+        
+    })
+    .then(status).catch( e => {console.log(e)
+    })
+}
+
+export function leaveGroups(data) {
+    return fetch(`http://127.0.0.1:8000/api/members/leave/`, {
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json"
+        }, 
+        body: JSON.stringify(data)
+        
+    })
+    .then(status).catch( e => {console.log(e)
+    })
+}
