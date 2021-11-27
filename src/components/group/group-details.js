@@ -11,6 +11,7 @@ import Button from "@mui/material/Button"
 import { joinGroups } from "../../services/services";
 import {useAuth} from "../../hooks/useAuth"
 import { leaveGroups } from "../../services/services";
+import Comments from "../comments/comments";
 
 
 const useStyles = makeStyles( theme => ({
@@ -111,6 +112,7 @@ if (loading) return <h1>Loading</h1>
 
             
         })}
+        <Comments group={group}/>
         </React.Fragment>
     }
     
