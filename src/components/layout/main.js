@@ -5,6 +5,9 @@ import GroupDetails from "../group/group-details";
 import {useAuth} from '../../hooks/useAuth'
 import Register from "../user/register";
 import Account from "../user/account"
+import Event from "../events/event";
+import EventForm from "../events/event-form";
+
 
 
 function Main() {
@@ -21,6 +24,12 @@ function Main() {
       <Route exact path="/details/:id">
         <GroupDetails />
       </Route>
+      <Route path="/event/:id">
+          <Event />
+        </Route>
+        <Route path="/event-form">
+          <EventForm />
+        </Route>
       <Route exact path="/register">
         <Register />
       </Route>

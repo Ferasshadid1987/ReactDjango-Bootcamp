@@ -12,6 +12,7 @@ import { joinGroups } from "../../services/services";
 import {useAuth} from "../../hooks/useAuth"
 import { leaveGroups } from "../../services/services";
 import Comments from "../comments/comments";
+import EventList from "../events/events-list";
 
 
 const useStyles = makeStyles( theme => ({
@@ -85,21 +86,7 @@ if (loading) return <h1>Loading</h1>
          
 
 
-        <h3>Events</h3>
-        {group.events.map (event => {
-            const format = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            const evtTime = DateTime.fromFormat(event.time, format)
-
-            return <div key={event.id}> 
-            <p>{event.team1} vs {event.team2}</p>
-            
-            <p>
-             <CalendarTodayIcon className={classes.dateTime}/>{evtTime.toSQLDate()}
-             <AccessTimeIcon className={classes.dateTime}/> {evtTime.toFormat('HH:mm')}</p>
-            </div>
-
-            
-        })}
+         <EventList events={group.events}/>
 
       <h3>Members</h3>
               {group.members.map (member => {

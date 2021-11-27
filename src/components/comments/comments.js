@@ -10,11 +10,12 @@ import { postComment } from "../../services/services";
 function Comments({group}) {
 
     const { authData} = useAuth();
-    const [ newComment, setNewComment] = useState('');
+    const [ newComment, setNewComment] = useState("");
   
     const getUser = userId => {
       return group.members.find(member => member.user.id === userId).user;
     }
+    
     const sendComment = () => {
       postComment(authData.token, newComment, group.id, authData.user.id)
         .then( resp => {
