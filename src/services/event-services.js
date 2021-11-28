@@ -1,7 +1,7 @@
 import { status } from "../utils"
 
 export function getEvent(token, id){
-    return fetch(`http://127.0.0.1:8000/api/events/${id}/`, {
+    return fetch(`http://159.65.53.3:8000/api/events/${id}/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -12,7 +12,7 @@ export function getEvent(token, id){
   }
   
   export function createEvent(token, data){
-    return fetch(`http://127.0.0.1:8000/api/events/`, {
+    return fetch(`http://159.65.53.3:8000/api/events/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export function getEvent(token, id){
   }
   
   export function placeBet(token, item){
-    return fetch(`http://127.0.0.1:8000/api/bets/place_bet/`, {
+    return fetch(`http://159.65.53.3:8000/api/bets/place_bet/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export function getEvent(token, id){
   }
   
   export function setResults(token, item){
-    return fetch(`http://127.0.0.1:8000/api/events/${item.event}/set_result/`, {
+    return fetch(`http://159.65.53.3:8000/api/events/${item.event}/set_result/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

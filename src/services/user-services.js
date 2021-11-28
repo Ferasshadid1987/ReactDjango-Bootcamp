@@ -1,7 +1,7 @@
 import { status } from "../utils"
 
 export function auth(credentials){
-    return fetch("http://127.0.0.1:8000/api/authenticate/", {
+    return fetch("http://159.65.53.3:8000/api/authenticate/", {
         method:"POST",
         headers:{
             "Content-Type": "application/json"
@@ -11,7 +11,7 @@ export function auth(credentials){
 }
 
 export function register(userData){
-    return fetch("http://127.0.0.1:8000/api/users/", {
+    return fetch("http://159.65.53.3:8000/api/users/", {
         method:"POST",
         headers:{
             "Content-Type": "application/json"
@@ -22,7 +22,7 @@ export function register(userData){
 }
 
 export function changePassword(userData, userId, token){
-    return fetch(`http://127.0.0.1:8000/api/users/${userId}/change_pass/`, {
+    return fetch(`http://159.65.53.3:8000/api/users/${userId}/change_pass/`, {
         method:"PUT",
         headers:{
             "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export function changePassword(userData, userId, token){
 }
 
 export function uploadAvatar(profileID, data){
-    return fetch(`http://127.0.0.1:8000/api/profile/${profileID}/`, {
+    return fetch(`http://159.65.53.3:8000/api/profile/${profileID}/`, {
         method:"PUT",
         body: data
     }).then(status).catch( e => {console.log(e)
