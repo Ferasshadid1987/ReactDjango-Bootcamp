@@ -13,7 +13,7 @@ export function getGroups() {
 }
 
 export function joinGroups(data) {
-    return fetch(`http://159.65.53.3:8000/api/members/join/`, {
+    return fetch(`http://127.0.0.1:8000/api/members/join/`, {
         method:"POST",
         headers:{
             "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export function joinGroups(data) {
 }
 
 export function leaveGroups(data) {
-    return fetch(`http://159.65.53.3:8000/api/members/leave/`, {
+    return fetch(`http://127.0.0.1:8000/api/members/leave/`, {
         method:"POST",
         headers:{
             "Content-Type": "application/json"
@@ -39,7 +39,7 @@ export function leaveGroups(data) {
 }
 
 export function postComment(token, description, group, user){
-    return fetch(`http://159.65.53.3:8000/api/comments/`, {
+    return fetch(`http://127.0.0.1:8000/api/comments/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
