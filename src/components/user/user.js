@@ -22,10 +22,16 @@ export default function User({ user }) {
   const classes = useStyles()
   console.log(user);
   return (
-    <div className={classes.container}>
-      <Avatar alt="user-avatar" src={`${process.env.REACT_APP_API_URL}${user?.profile?.image}`} />
-      <p className={classes.username}>{user.username}</p>
-    </div>
+    <>
+      {
+        user !== undefined ?
+          <div className={classes.container}>
+            <Avatar alt="user-avatar" src={`${process.env.REACT_APP_API_URL}${user?.profile?.image}`} />
+            <p className={classes.username}>{user.username}</p>
+          </div> :
+          <div><p>No data available</p></div>
+      }
+    </>
   );
 }
 
